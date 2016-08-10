@@ -3,6 +3,8 @@ from abc import abstractmethod, abstractproperty
 import json
 from boto.exception import BotoServerError
 import re
+
+from django.conf import settings
 from django.db import models
 from scarface.platform_strategy import get_strategies
 from scarface.utils import DefaultConnection, PushLogger
@@ -138,6 +140,11 @@ class Device(SNSCRUDMixin, models.Model):
     Device class for registering a end point to
     SNS.
     '''
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='devices'
+    )
 
     device_id = models.CharField(
         max_length=255,
