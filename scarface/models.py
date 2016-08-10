@@ -142,7 +142,8 @@ class Device(SNSCRUDMixin, models.Model):
     '''
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        related_name='devices'
+        related_name='devices',
+        null=True
     )
 
     device_id = models.CharField(
