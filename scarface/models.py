@@ -611,7 +611,8 @@ class PushMessage(models.Model):
             'title': self.title,
             'image': self.image,
             'picture': self.picture,
-            'summaryText': self.summaryText
+            'summaryText': self.summaryText,
+            'style': self.style
         }
         if self.extra_payload:
             d.update(self.extra_payload)
