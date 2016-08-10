@@ -607,7 +607,11 @@ class PushMessage(models.Model):
             'context_id': self.context_id,
             'badge_count': self.badge_count,
             'sound': self.sound,
-            'has_new_content': self.has_new_content
+            'has_new_content': self.has_new_content,
+            'title': self.title,
+            'image': self.image,
+            'picture': self.picture,
+            'summaryText': self.summaryText
         }
         if self.extra_payload:
             d.update(self.extra_payload)
