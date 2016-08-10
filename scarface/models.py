@@ -587,6 +587,11 @@ class PushMessage(models.Model):
     extra_payload = models.TextField(blank=True, null=True)
     receiver_arn = models.TextField(blank=True, null=True)
     message_type = models.PositiveSmallIntegerField(default=0)
+    title = models.CharField(max_length=200, null=True, blank=True)
+    image = models.TextField(null=True, blank=True)
+    style = models.TextField(null=True, blank=True)
+    picture = models.TextField(null=True, blank=True)
+    summaryText = models.TextField(null=True, blank=True)
 
     def as_dict(self):
         d = {
